@@ -33,17 +33,24 @@ $$
 ![image-20201016145829674](imgs\image-20201016145829674.png)
 
 **状态价值函数（state value function）[^3]**	给定策略函数$\pi(·)$，$a=\pi(s)$，策略是**个体从一个状态到一个动作的映射**。使用价值函数来评价策略函数$\pi(·)$。系统的状态价值函数是**从当前状态开始到最终时系统在该固定策略下所获得的累加奖励的期望**。
+
+$\gamma$是衰减因子，$\gamma \in[0,1]$，用来**对立即奖励和延迟奖励加权**。
 $$
-V^\pi(s)=\mathbb{E}_\pi[r_t+\gamma_{t+1}r_{t+1}+\gamma_{t+2}^2r_{t+2}\dots|s_t=s]
-$$
-$\gamma$是衰减因子，$\gamma \in[0,1]$，用来**对立即奖励和延迟奖励加权**。也可以写作
-$$
-V^\pi(s)=\mathbb{E}_\pi[R_t|s_t=s]
+V^\pi(s)=\mathbb{E}_\pi[G_t|s_t=s]
 $$
 **状态动作价值函数（State-Action Value Function）**	也称Q函数，给定一个状态$s_t$，采取动作$a_t$后，按照某一个固定策略$\pi_s$与环境继续进行交互，得到的累加奖励的期望值。
 $$
-Q^\pi(s,a)=\mathbb{E}_\pi[R_t|s_t=s,a_t=a]
+Q^\pi(s,a)=\mathbb{E}_\pi[G_t|s_t=s,a_t=a]
 $$
+
+**贝尔曼方程（Bellman function）**	是对状态价值函数的递归分解。
+$$
+\begin{align}
+V(S)=\mathbb{E}[R_t|s_t=s]\\
+=\mathbb{E}[r_{t+1}]
+\end{align}
+$$
+
 
 
 
