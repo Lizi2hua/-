@@ -48,7 +48,7 @@ $$
 \begin{align}
 V(S)=\mathbb{E}[R_t|s_t=s]\\
 =\mathbb{E}[r_{t+1}]
-\end{align}
+\end{align}
 $$
 
 
